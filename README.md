@@ -142,5 +142,11 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_memcached_cluster_arn"></a> [memcached\_cluster\_arn](#output\_memcached\_cluster\_arn) | n/a |
+| <a name="output_elasticache_cluster_id"></a> [elasticache\_cluster\_id](#output\_elasticache\_cluster\_id) | n/a |
+| <a name="output_elasticache_cluster_arn"></a> [elasticache\_cluster\_arn](#output\_elasticache\_cluster\_arn) | n/a |
+| <a name="output_elasticache_cluster_engine"></a> [elasticache\_cluster\_engine](#output\_elasticache\_cluster\_engine) | n/a |
+| <a name="output_elasticache_cluster_node_type"></a> [elasticache\_cluster\_node\_type](#output\_elasticache\_cluster\_node\_type) | n/a |
+| <a name="output_elasticache_cluster_num_cache_nodes"></a> [elasticache\_cluster\_num\_cache\_nodes](#output\_elasticache\_cluster\_num\_cache\_nodes) | n/a |
+| <a name="output_elasticache_cluster_parameter_group_name"></a> [elasticache\_cluster\_parameter\_group\_name](#output\_elasticache\_cluster\_parameter\_group\_name) | n/a |
+| <a name="output_elasticache_cluster_port"></a> [elasticache\_cluster\_port](#output\_elasticache\_cluster\_port) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
