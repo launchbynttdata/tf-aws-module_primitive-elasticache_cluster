@@ -23,9 +23,9 @@ module "elasticache_cluster" {
   source = "../.."
 
   cluster_id           = random_string.cluster_id.id
-  engine               = "memcached"
-  node_type            = "cache.t4g.micro"
-  num_cache_nodes      = 1
-  parameter_group_name = "default.memcached1.6"
-  port                 = 11211
+  engine               = var.engine
+  node_type            = var.node_type
+  num_cache_nodes      = var.num_cache_nodes
+  parameter_group_name = var.parameter_group_name
+  port                 = var.port
 }
