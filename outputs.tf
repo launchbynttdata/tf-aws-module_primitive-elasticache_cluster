@@ -21,15 +21,19 @@ output "elasticache_cluster_arn" {
 output "elasticache_cluster_engine" {
   value = aws_elasticache_cluster.cluster.engine
 }
+
 output "elasticache_cluster_node_type" {
   value = aws_elasticache_cluster.cluster.node_type
 }
+
 output "elasticache_cluster_num_cache_nodes" {
   value = aws_elasticache_cluster.cluster.num_cache_nodes
 }
+
 output "elasticache_cluster_parameter_group_name" {
   value = aws_elasticache_cluster.cluster.parameter_group_name
 }
+
 output "elasticache_cluster_port" {
   value = aws_elasticache_cluster.cluster.port
 }
