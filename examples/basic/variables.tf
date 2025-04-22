@@ -13,7 +13,7 @@
 variable "engine" {
   type        = string
   default     = "memcached"
-  description = "(Optional, Required if replication_group_id is not specified) Name of the cache engine to be used for this cache cluster."
+  description = "Name of the cache engine to be used for this cache cluster."
   validation {
     condition     = contains(["memcached", "redis"], var.engine)
     error_message = "engine should have a valid value."
@@ -22,20 +22,22 @@ variable "engine" {
 
 variable "node_type" {
   type        = string
-  default     = null
-  description = "(Required unless replication_group_id is provided) The instance class used."
+  description = "The instance class used."
 }
 
 variable "num_cache_nodes" {
   type        = number
-  default     = null
-  description = "(Required unless replication_group_id is provided) The initial number of cache nodes that the cache cluster will have."
+  default     = 1
+  description = "The initial number of cache nodes that the cache cluster will have."
+  validation {
+    condition     = var.num_cache_nodes >= 1
+    error_message = "num_cache_nodes should be greather or equal than 1."
+  }
 }
 
 variable "parameter_group_name" {
   type        = string
-  default     = null
-  description = "(Required unless replication_group_id is provided) The name of the parameter group to associate with this cache cluster."
+  description = "The name of the parameter group to associate with this cache cluster."
 }
 
 variable "port" {

@@ -31,10 +31,10 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_engine"></a> [engine](#input\_engine) | (Optional, Required if replication\_group\_id is not specified) Name of the cache engine to be used for this cache cluster. | `string` | `"memcached"` | no |
-| <a name="input_node_type"></a> [node\_type](#input\_node\_type) | (Required unless replication\_group\_id is provided) The instance class used. | `string` | `null` | no |
-| <a name="input_num_cache_nodes"></a> [num\_cache\_nodes](#input\_num\_cache\_nodes) | (Required unless replication\_group\_id is provided) The initial number of cache nodes that the cache cluster will have. | `number` | `null` | no |
-| <a name="input_parameter_group_name"></a> [parameter\_group\_name](#input\_parameter\_group\_name) | (Required unless replication\_group\_id is provided) The name of the parameter group to associate with this cache cluster. | `string` | `null` | no |
+| <a name="input_engine"></a> [engine](#input\_engine) | Name of the cache engine to be used for this cache cluster. | `string` | `"memcached"` | no |
+| <a name="input_node_type"></a> [node\_type](#input\_node\_type) | The instance class used. | `string` | n/a | yes |
+| <a name="input_num_cache_nodes"></a> [num\_cache\_nodes](#input\_num\_cache\_nodes) | The initial number of cache nodes that the cache cluster will have. | `number` | `1` | no |
+| <a name="input_parameter_group_name"></a> [parameter\_group\_name](#input\_parameter\_group\_name) | The name of the parameter group to associate with this cache cluster. | `string` | n/a | yes |
 | <a name="input_port"></a> [port](#input\_port) | (Optional) The port number on which each of the cache nodes will accept connections. | `number` | `11211` | no |
 
 ## Outputs
