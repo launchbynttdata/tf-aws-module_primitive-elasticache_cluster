@@ -1,4 +1,4 @@
-# Your Module Name
+# tf-aws-module_primitive-elasticache_cluster
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
@@ -137,10 +137,28 @@ No modules.
 | <a name="input_num_cache_nodes"></a> [num\_cache\_nodes](#input\_num\_cache\_nodes) | (Required unless replication\_group\_id is provided) The initial number of cache nodes that the cache cluster will have. | `number` | `null` | no |
 | <a name="input_parameter_group_name"></a> [parameter\_group\_name](#input\_parameter\_group\_name) | (Required unless replication\_group\_id is provided) The name of the parameter group to associate with this cache cluster. | `string` | `null` | no |
 | <a name="input_port"></a> [port](#input\_port) | (Optional) The port number on which each of the cache nodes will accept connections. | `number` | `11211` | no |
+| <a name="input_apply_immediately"></a> [apply\_immediately](#input\_apply\_immediately) | (Optional) Whether any database modifications are applied immediately, or during the next maintenance window. | `bool` | `false` | no |
+| <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | (Optional) Version number of the cache engine to be used. If not set, defaults to the latest version. | `string` | `null` | no |
+| <a name="input_transit_encryption_enabled"></a> [transit\_encryption\_enabled](#input\_transit\_encryption\_enabled) | (Optional) Enable encryption in-transit. | `string` | `null` | no |
+| <a name="input_subnet_group_name"></a> [subnet\_group\_name](#input\_subnet\_group\_name) | (Optional, VPC only) Name of the subnet group to be used for the cache cluster. | `string` | `null` | no |
+| <a name="input_security_group_ids"></a> [security\_group\_ids](#input\_security\_group\_ids) | (Optional, VPC only) One or more VPC security groups associated with the cache cluster. | `list(string)` | `null` | no |
+| <a name="input_maintenance_window"></a> [maintenance\_window](#input\_maintenance\_window) | (Optional) Specifies the weekly time range for when maintenance on the cache cluster is performed. | `string` | `null` | no |
+| <a name="input_notification_topic_arn"></a> [notification\_topic\_arn](#input\_notification\_topic\_arn) | (Optional) ARN of an SNS topic to send ElastiCache notifications to. | `string` | `null` | no |
+| <a name="input_az_mode"></a> [az\_mode](#input\_az\_mode) | (Optional, Memcached only) Whether the nodes in this Memcached node group are created in a single Availability Zone or created across multiple Availability Zones in the cluster's region. | `string` | `null` | no |
+| <a name="input_availability_zone"></a> [availability\_zone](#input\_availability\_zone) | (Optional) Availability Zone for the cache cluster. | `string` | `null` | no |
+| <a name="input_preferred_availability_zones"></a> [preferred\_availability\_zones](#input\_preferred\_availability\_zones) | (Optional, Memcached only) List of the Availability Zones in which cache nodes are created. | `list(string)` | `null` | no |
+| <a name="input_network_type"></a> [network\_type](#input\_network\_type) | (Optional) The IP versions for cache cluster connections. | `string` | `null` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | (Optional) Map of tags to assign to the resource. | `map(string)` | `null` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_memcached_cluster_arn"></a> [memcached\_cluster\_arn](#output\_memcached\_cluster\_arn) | n/a |
+| <a name="output_elasticache_cluster_id"></a> [elasticache\_cluster\_id](#output\_elasticache\_cluster\_id) | n/a |
+| <a name="output_elasticache_cluster_arn"></a> [elasticache\_cluster\_arn](#output\_elasticache\_cluster\_arn) | n/a |
+| <a name="output_elasticache_cluster_engine"></a> [elasticache\_cluster\_engine](#output\_elasticache\_cluster\_engine) | n/a |
+| <a name="output_elasticache_cluster_node_type"></a> [elasticache\_cluster\_node\_type](#output\_elasticache\_cluster\_node\_type) | n/a |
+| <a name="output_elasticache_cluster_num_cache_nodes"></a> [elasticache\_cluster\_num\_cache\_nodes](#output\_elasticache\_cluster\_num\_cache\_nodes) | n/a |
+| <a name="output_elasticache_cluster_parameter_group_name"></a> [elasticache\_cluster\_parameter\_group\_name](#output\_elasticache\_cluster\_parameter\_group\_name) | n/a |
+| <a name="output_elasticache_cluster_port"></a> [elasticache\_cluster\_port](#output\_elasticache\_cluster\_port) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

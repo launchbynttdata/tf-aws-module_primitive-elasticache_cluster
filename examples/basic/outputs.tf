@@ -11,29 +11,25 @@
 // limitations under the License.
 
 output "elasticache_cluster_id" {
-  value = aws_elasticache_cluster.cluster.cluster_id
+  value = module.elasticache_cluster.elasticache_cluster_id
 }
 
 output "elasticache_cluster_arn" {
-  value = aws_elasticache_cluster.cluster.arn
+  value = module.elasticache_cluster.elasticache_cluster_arn
 }
 
 output "elasticache_cluster_engine" {
-  value = aws_elasticache_cluster.cluster.engine
+  value = module.elasticache_cluster.elasticache_cluster_engine
 }
-
 output "elasticache_cluster_node_type" {
-  value = aws_elasticache_cluster.cluster.node_type
+  value = module.elasticache_cluster.elasticache_cluster_node_type
 }
-
 output "elasticache_cluster_num_cache_nodes" {
-  value = aws_elasticache_cluster.cluster.num_cache_nodes
+  value = module.elasticache_cluster.elasticache_cluster_num_cache_nodes
 }
-
 output "elasticache_cluster_parameter_group_name" {
-  value = aws_elasticache_cluster.cluster.parameter_group_name
+  value = module.elasticache_cluster.elasticache_cluster_parameter_group_name
 }
-
 output "elasticache_cluster_port" {
-  value = aws_elasticache_cluster.cluster.port
+  value = module.elasticache_cluster.elasticache_cluster_port
 }
