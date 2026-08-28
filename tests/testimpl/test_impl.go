@@ -18,9 +18,9 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 	awsClient := GetAWSElasticacheClient(t)
 
 	t.Run("TestElasticacheClusterIsDeployed", func(t *testing.T) {
-		cacheClusterId := terraform.Output(t, ctx.TerratestTerraformOptions(), "elasticache_cluster_id")
-		arn := terraform.Output(t, ctx.TerratestTerraformOptions(), "elasticache_cluster_arn")
-		engine := terraform.Output(t, ctx.TerratestTerraformOptions(), "elasticache_cluster_engine")
+		cacheClusterId := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "elasticache_cluster_id")
+		arn := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "elasticache_cluster_arn")
+		engine := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "elasticache_cluster_engine")
 
 		clusters, err := awsClient.DescribeCacheClusters(context.TODO(), &elasticache.DescribeCacheClustersInput{
 			CacheClusterId: &cacheClusterId,
@@ -35,7 +35,7 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 	})
 
 	t.Run("TestElasticacheClusterIsAvailable", func(t *testing.T) {
-		cacheClusterId := terraform.Output(t, ctx.TerratestTerraformOptions(), "elasticache_cluster_id")
+		cacheClusterId := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "elasticache_cluster_id")
 
 		clusters, err := awsClient.DescribeCacheClusters(context.TODO(), &elasticache.DescribeCacheClustersInput{
 			CacheClusterId: &cacheClusterId,
@@ -49,8 +49,8 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 	})
 
 	t.Run("TestElasticacheClusterDeployedCacheNodes", func(t *testing.T) {
-		cacheClusterId := terraform.Output(t, ctx.TerratestTerraformOptions(), "elasticache_cluster_id")
-		cacheNodes, _ := strconv.Atoi(terraform.Output(t, ctx.TerratestTerraformOptions(), "elasticache_cluster_num_cache_nodes"))
+		cacheClusterId := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "elasticache_cluster_id")
+		cacheNodes, _ := strconv.Atoi(terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "elasticache_cluster_num_cache_nodes"))
 
 		clusters, err := awsClient.DescribeCacheClusters(context.TODO(), &elasticache.DescribeCacheClustersInput{
 			CacheClusterId: &cacheClusterId,
