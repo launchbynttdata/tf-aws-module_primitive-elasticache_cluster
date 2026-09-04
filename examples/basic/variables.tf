@@ -16,7 +16,7 @@ variable "engine" {
   description = "Name of the cache engine to be used for this cache cluster."
   validation {
     condition     = contains(["memcached", "redis"], var.engine)
-    error_message = "engine should have a valid value."
+    error_message = "The engine should have a valid value."
   }
 }
 
@@ -31,7 +31,7 @@ variable "num_cache_nodes" {
   description = "The initial number of cache nodes that the cache cluster will have."
   validation {
     condition     = var.num_cache_nodes >= 1
-    error_message = "num_cache_nodes should be greather or equal than 1."
+    error_message = "The num_cache_nodes should be greater or equal than 1."
   }
 }
 
